@@ -14,7 +14,7 @@ class ForwardSolver:
                 phi = self._p[k - 1][j - 2 ** (k - 1)] + self._p[k - 1][j + 2 ** (k - 1)]
                 self._p[k][j] = self._p[k - 1][j]
                 for l in range(1, 2 ** (k - 1)):
-                    self._p[k][j] += self._count_v(C, a, phi)
+                    self._p[k][j] += self._count_v(self._count_matrix_c(), self._count_a(), phi)
                 self._p[k][j] *= 0.5
                 j *= 2
 
@@ -22,6 +22,12 @@ class ForwardSolver:
         return self._p
 
     def _count_v(self, C, a, phi):
+        pass
+
+    def _count_matrix_c(self):
+        pass
+
+    def _count_a(self):
         pass
 
 
